@@ -30,7 +30,7 @@ predetermined design.
 
 <img src="./Others/Safety-Warning.png">
 
-## Componenets Needed
+## Components Needed
 * ESP32 Development Board (1) <br/>
 * PCB (2) <br/>
 * Box (2) <br/>
