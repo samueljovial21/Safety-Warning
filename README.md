@@ -27,4 +27,4 @@ executed actions according to the embedded logic in the microcontroller. Therefo
 the developed and tested system can be deemed to work according to the
 predetermined design.
 
-<img src="./others/safety-warning.png">
+<img src="./Others/Safety-Warning.png">
