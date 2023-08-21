@@ -51,14 +51,17 @@ predetermined design.
 <img src="./Wiring/Safety_Warning_Wiring.png">
 
 ### Wiring on Relay to Motorcycle Battery <br/>
-<center><img src="./Wiring/Relay_Wiring.png" width="450" height="500" ><center/>
+<img src="./Wiring/Relay_Wiring.png" width="600" height="500" align="center">
 
 ## Others
 ### Main Box Design
 <img src="./Others/Main_Box_Design.PNG">
+
 ### Actuator Box Design
 <img src="./Others/Actuator_Box_Design.PNG">
+
 ### Implementation Design
 <img src="./Others/Implementation_Design.PNG">
+
 ### MIT App Inventor
 <img src="./Others/mit-app-inventor.PNG">
