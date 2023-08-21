@@ -1,3 +1,4 @@
+// Library and Init Section
 // this header is needed for Bluetooth Serial -> works ONLY on ESP32
 #include "BluetoothSerial.h"
 
@@ -50,19 +51,6 @@ int previous_condition = 0;
 bool getaran = false;
 
 int kecepatan;
-
-// Volt Sensor Things :
-// Floats for ADC voltage & Input voltage
-float adc_voltage = 0.0;
-float in_voltage = 0.0;
-// Floats for resistor values in divider (in ohms)
-float R1 = 30000.0;
-float R2 = 7500.0;
-// Float for Reference Voltage
-float ref_voltage = 5.0;
-// Integer for ADC value
-int adc_value = 0;
-
 
 bool mode = true;  // True for riding mode & false for parking mode
 
@@ -122,6 +110,7 @@ void setup() {
 }
 
 void loop() {
+  // Read The Incoming Bluetooth Value
   if (SerialBT.available()) {
     incoming = SerialBT.read();
 
@@ -139,18 +128,10 @@ void loop() {
 
   saran = "Tidak ada saran berkendara";
 
-  // Volt Sensor Things :
-  // Read the Analog Input
-  adc_value = analogRead(ANALOG_IN_PIN);
-  // Determine voltage at ADC input
-  adc_voltage = (adc_value * ref_voltage) / 1024.0;
-  // Calculate voltage at divider input
-  in_voltage = adc_voltage / (R2 / (R1 + R2));
-  int temp = in_voltage;
-
-
+  // Getting Value of Y Axis Gyro
   getSudut();
 
+  // Getting Value of GPS
   boolean newData = false;
   for (unsigned long start = millis(); millis() - start < 250;) {
     while (serial_gps.available()) {
@@ -160,6 +141,7 @@ void loop() {
     }
   }
 
+  // Getting Value of Speed from GPS
   if (newData == true) {
     newData = false;
     if (gps.satellites.value() != 0) {
@@ -168,16 +150,20 @@ void loop() {
     }
   }
 
+  // Read The Sim800l serial
   if (Serial.available()) {
     sim800.write(Serial.read());
   }
 
+  // Read incoming message
   if (sim800.available() > 0) {
     pesan = sim800.readStringUntil('\n');
     pesan.toLowerCase();
     Serial.println(pesan);
+    // calling function if the message is "get location"
     if (pesan == "get location\r") {
       getLink();
+      // calling function if the message is "relay off"
     } else if (pesan == "relay off\r") {
       mode = false;
       notifikasi();
@@ -558,6 +544,7 @@ void loop() {
 
   String nyala = "Mode Parkir Menyala";
 
+  // Sending value to bluetooth
   if (mode) {
     SerialBT.print(String(satelit) + "-" + String(kecepatan) + " km/jam" + "-" + String(sudut) + "°" + "-" + saran);
   } else {
@@ -570,6 +557,7 @@ void loop() {
   }
 }
 
+// Getting google maps link to send via sms
 void getLink() {
   boolean newData = false;
   for (unsigned long start = millis(); millis() - start < 2000;) {
@@ -587,7 +575,7 @@ void getLink() {
 
     sim800.print("AT+CMGF=1\r");
     delay(1000);
-    sim800.print("AT+CMGS=\"+6281263178388\"\r");
+    sim800.print("AT+CMGS=\"+62xxxxxxxxxxx\"\r");
     delay(1000);
     sim800.print("http://maps.google.com/maps?q=loc:");
     sim800.print(gps.location.lat(), 6);
@@ -600,9 +588,10 @@ void getLink() {
   }
 
   else {
+    // if gps is not getting any signal
     sim800.println("AT+CMGF=1");
     delay(1000);
-    sim800.println("AT+CMGS=\"+6281263178388\"\r");
+    sim800.println("AT+CMGS=\"+62xxxxxxxxxxx\"\r");
     delay(1000);
     sim800.print("Belum ada link");
     delay(100);
@@ -611,10 +600,11 @@ void getLink() {
   }
 }
 
+// Change mode to parkir using sms
 void notifikasi() {
   sim800.println("AT+CMGF=1");
   delay(1000);
-  sim800.println("AT+CMGS=\"+6281263178388\"\r");
+  sim800.println("AT+CMGS=\"+62xxxxxxxxxxx\"\r");
   delay(1000);
   sim800.print("Kendaraan Anda sekarang berhasil diubah ke mode parkir.");
   delay(100);
@@ -622,10 +612,11 @@ void notifikasi() {
   delay(1000);
 }
 
+// Notify the user 
 void positipMaling() {
   sim800.println("AT+CMGF=1");
   delay(1000);
-  sim800.println("AT+CMGS=\"+6281263178388\"\r");
+  sim800.println("AT+CMGS=\"+62xxxxxxxxxxx\"\r");
   delay(1000);
   sim800.println("Terindikasi Pencurian!!!");
   delay(100);
@@ -633,6 +624,7 @@ void positipMaling() {
   delay(1000);
 }
 
+// Getting gyro Y axis value
 void getSudut() {
   mpu6050.update();
   if (millis() - timer > 10) {
