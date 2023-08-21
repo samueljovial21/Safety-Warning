@@ -51,7 +51,7 @@ predetermined design.
 <img src="./Wiring/Safety_Warning_Wiring.png">
 
 ### Wiring on Relay to Motorcycle Battery <br/>
-<img src="./Wiring/Relay_Wiring.png" width="500" height="600">
+<center><img src="./Wiring/Relay_Wiring.png" width="500" height="500" ><center/>
 
 ## Others
 ### Main Box Design
