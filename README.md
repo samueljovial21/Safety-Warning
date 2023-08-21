@@ -1,4 +1,5 @@
 # Safety-Warning
+
 ## Final Project as a bachelor degree of Informatics Engineer
 
 Various problems arise in the use of motorcycles. Among the common issues are the
@@ -53,15 +54,15 @@ predetermined design.
 ### Wiring on Relay to Motorcycle Battery <br/>
 <img src="./Wiring/Relay_Wiring.png" width="600" height="500" align="center">
 
-## Others
-### Main Box Design
+## Others <br/>
+### Main Box Design <br/>
 <img src="./Others/Main_Box_Design.PNG">
 
-### Actuator Box Design
+### Actuator Box Design <br/>
 <img src="./Others/Actuator_Box_Design.PNG">
 
-### Implementation Design
+### Implementation Design <br/>
 <img src="./Others/Implementation_Design.PNG">
 
-### MIT App Inventor
+### MIT App Inventor <br/>
 <img src="./Others/mit-app-inventor.PNG">
