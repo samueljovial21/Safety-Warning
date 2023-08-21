@@ -26,3 +26,5 @@ testing of the sensors yielded values above 60%, and the actuators successfully
 executed actions according to the embedded logic in the microcontroller. Therefore,
 the developed and tested system can be deemed to work according to the
 predetermined design.
+
+<img src="./others/safety-warning.png">
