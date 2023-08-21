@@ -1,5 +1,5 @@
 # Safety-Warning
-##Final Project as a bachelor degree of Informatics Engineer
+## Final Project as a bachelor degree of Informatics Engineer
 
 Various problems arise in the use of motorcycles. Among the common issues are the
 high occurrence of traffic accidents at high speeds and motorcycle theft. Traffic
@@ -28,3 +28,37 @@ the developed and tested system can be deemed to work according to the
 predetermined design.
 
 <img src="./Others/Safety-Warning.png">
+
+## Componenets Needed
+* ESP32 Development Board (1) <br/>
+* PCB (2) <br/>
+* Box (2) <br/>
+* LM2596 DC Stepdown Modul (2) <br/>
+* GPS Ublox Neo 6m (1) <br/>
+* SIM800L Module (1) <br/>
+* SW420 Vibration Sensor (1) <br/>
+* MPU6050 Gyroscope Sensor (1) <br/>
+* Relay Module 1 Channel (1) <br/>
+* 470uF 16V Capasitor (1) <br/>
+* 470uF 25V Capasitor (1) <br/>
+* High Decibel Buzzer (2) <br/>
+* LED (Red (1), Yellow(1), Green(1)) <br/>
+* 220 ohm Resistor (3) <br/>
+
+## Wiring Diagram
+
+### Wiring on board (PCB) <br/>
+<img src="./Wiring/Safety_Warning_Wiring.png">
+
+### Wiring on Relay to Motorcycle Battery <br/>
+<img src="./Wiring/Relay_Wiring.png">
+
+## Others
+### Main Box Design
+<img src="./Others/Main_Box_Design.PNG">
+### Actuator Box Design
+<img src="./Others/Actuator_Box_Design.PNG">
+### Implementation Design
+<img src="./Others/Impementation_Design.PNG">
+### MIT App Inventor
+<img src="./Others/mit-app-inventor.PNG">
