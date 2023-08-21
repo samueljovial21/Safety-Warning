@@ -56,9 +56,12 @@ predetermined design.
 ## Others
 ### Main Box Design
 <img src="./Others/Main_Box_Design.PNG">
+<br/>
 ### Actuator Box Design
 <img src="./Others/Actuator_Box_Design.PNG">
+<br/>
 ### Implementation Design
 <img src="./Others/Impementation_Design.PNG">
+<br/>
 ### MIT App Inventor
 <img src="./Others/mit-app-inventor.PNG">
