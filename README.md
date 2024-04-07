@@ -26,7 +26,7 @@ The results of this research include the design of a hardware and software syste
 the form of a circuit that has been experimentally tested in the field. The implemented
 design was then tested for accuracy of sensor readings and the compatibility of sensor
 and actuator performance in following the specified logic commands. <br/> <br/>
-The accuracy testing of the sensors yielded values above 60%, and the actuators successfully
+The accuracy testing of the sensors yielded values above 70%, and the actuators successfully
 executed actions according to the embedded logic in the microcontroller. Therefore,
 the developed and tested system can be deemed to work according to the
 predetermined design.
